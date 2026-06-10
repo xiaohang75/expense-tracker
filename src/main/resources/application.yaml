@@ -1,0 +1,13 @@
+server:
+    port: 8080
+spring:
+    application:
+        name: shenshou-expense-tracker
+    datasource:
+        url: jdbc:mysql://localhost:3306/expense_tracker?useSSL=false&serverTimezone=UTC
+        username: root
+        password: root
+        driver-class-name: com.mysql.cj.jdbc.Driver
+jwt:
+    secret: emhhbmdoYW5n
+    expirationMs: 604800 # 1 hour in milliseconds
