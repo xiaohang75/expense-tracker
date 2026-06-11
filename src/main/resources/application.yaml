@@ -8,6 +8,22 @@ spring:
         username: root
         password: root
         driver-class-name: com.mysql.cj.jdbc.Driver
+    redis:
+        host: localhost
+        port: 6379
+        database: 2
 jwt:
     secret: emhhbmdoYW5n
     expirationMs: 604800 # 1 hour in milliseconds
+mybatis-plus:
+    type-aliases-package: com.aws.system.domain.po
+    global-config:
+        db-config:
+            id-type: auto # 全局id类型为自增长
+            logic-delete-field: deleted
+            logic-delete-value: 1
+            logic-not-delete-value: 0
+    mapper-locations: "classpath*:/mapper/**/*.xml" # Mapper.xml文件地址，当前这个是默认值。
+    configuration:
+        log-prefix: "SQL:"
+        log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
